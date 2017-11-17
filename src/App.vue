@@ -1,15 +1,26 @@
 <template>
   <div id="app">
     <h1>Audax Society</h1>
+    <quest v-bind:model="testQuest"></quest>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
+import QuestModel from './quests/QuestModel'
+import Quest from './quests/Quest.vue'
 
-@Component
+@Component({
+  components: {
+    Quest
+  }
+})
 export default class App extends Vue {
+  testQuest: QuestModel = new QuestModel("TestQuest");
+
+  mounted() {
+  }
 }
 </script>
 
