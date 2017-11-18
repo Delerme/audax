@@ -17,7 +17,7 @@ import Quest from './quests/Quest.vue'
   }
 })
 export default class App extends Vue {
-  testQuest: QuestModel = new QuestModel("TestQuest");
+  testQuest: QuestModel = new QuestModel("The Amulet of Gorgo");
 
   mounted() {
   }

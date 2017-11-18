@@ -1,7 +1,7 @@
 {
   "name": "audax",
   "description": "D&D session management web application",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Julian Delerme <delerme@me.com>",
   "license": "MIT",
   "private": true,

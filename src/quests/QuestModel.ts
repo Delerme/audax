@@ -1,7 +1,7 @@
 export default class QuestModel {
   title: string
   description: string
-  difficulty: number  // TODO: enum?
+  difficulty: number
   reward: string
   party: string[]   // TODO: player objects?
 
