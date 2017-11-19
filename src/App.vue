@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <h1>Audax Society</h1>
-    <quest v-bind:model="testQuest"></quest>
+    <template v-for="quest in quests">
+      <quest v-bind:model="quest"></quest>
+    </template>
   </div>
 </template>
 
@@ -10,6 +12,7 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 import QuestModel from './quests/QuestModel'
 import Quest from './quests/Quest.vue'
+import QuestService from './quests/QuestService'
 
 @Component({
   components: {
@@ -17,19 +20,15 @@ import Quest from './quests/Quest.vue'
   }
 })
 export default class App extends Vue {
-  testQuest: QuestModel = new QuestModel("The Amulet of Gorgo");
+  quests: QuestModel[] = new QuestService().getQuestList();
 
-  mounted() {
-  }
+  mounted() {}
 }
 </script>
 
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: left;
   color: #2c3e50;
   padding: 50px;
 }

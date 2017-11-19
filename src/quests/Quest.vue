@@ -41,6 +41,8 @@ div.quest {
   height: 10em;
   background-color: #cecece;
   padding: 1em;
+  margin: 1em 5em 1em 0em;
+  float: left;
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
