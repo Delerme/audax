@@ -20,9 +20,15 @@ import QuestService from './quests/QuestService'
   }
 })
 export default class App extends Vue {
-  quests: QuestModel[] = new QuestService().getQuestList();
+  quests: QuestModel[] = []
 
-  mounted() {}
+  mounted() {
+    this.getQuestList();
+  }
+
+  async getQuestList() {
+    this.quests = await new QuestService().getQuestList();
+  }
 }
 </script>
 
