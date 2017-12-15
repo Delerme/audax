@@ -44,12 +44,12 @@ h1, h2 {
 }
 
 ul {
-  list-style-type: none;
+  list-style-type: lao;
   padding: 0;
 }
 
 li {
-  display: inline-block;
+  /*display: inline-block;*/
   margin: 0 10px;
 }
 

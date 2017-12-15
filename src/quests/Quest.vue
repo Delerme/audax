@@ -7,7 +7,10 @@
       <p>{{ model.description }}</p>
     </template>
     <template v-else>
-      <h2>Reward: {{ model.reward }}</h2>
+      <h2>Rewards:</h2>
+      <ul>
+        <li v-for="reward in model.rewards">{{ reward }}</li>
+      </ul>
       <h2>Party: {{ model.party }}</h2>
     </template>
   </div>
@@ -37,8 +40,8 @@ export default class Quest extends Vue {
 
 <style>
 div.quest {
-  width: 30em;
-  height: 10em;
+  width: 20em;
+  height: 30em;
   background-color: #cecece;
   padding: 1em;
   margin: 1em 5em 1em 0em;
@@ -64,8 +67,8 @@ button.toggle-description {
 
 h1 {
   margin: 0em;
-  min-width: 70%;
-  max-width: 75%;
+  min-width: 65%;
+  max-width: 70%;
   font-style: italic;
 }
 
@@ -79,6 +82,7 @@ h3 {
 
 p {
   width: 100%;
+  height: 80%;
   font-size: 1.4em;
 }
 

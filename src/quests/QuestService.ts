@@ -6,9 +6,14 @@ export default class QuestService {
   MOCK_QUESTS: QuestModel[]
   
   constructor() {
-    let quest1 = new QuestModel("Quest 1");
-    let quest2 = new QuestModel("Quest 2");
-    let quest3 = new QuestModel("Quest 3");
+    let quest1 = new QuestModel('The Armlet of Mordigian');
+    quest1.description = `Rumors indicate the Armlet of Mordigian lies
+      in a buried tomb several leagues south of Waterdeep. History says the tomb
+      is home to warriors of a once great army that now rest with many treasures
+      from their victories. They may not be keen to anyone who disturbs 
+      their slumber...`;
+    let quest2 = new QuestModel('Quest 2');
+    let quest3 = new QuestModel('Quest 3');
 
     this.MOCK_QUESTS = [quest1, quest2, quest3];
   }
