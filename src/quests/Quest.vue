@@ -11,7 +11,10 @@
       <ul>
         <li v-for="reward in model.rewards">{{ reward }}</li>
       </ul>
-      <h2>Party: {{ model.party }}</h2>
+      <template v-for="(email, index) in model.party">
+        <signup-slot :email="email" :index="index" @requestSlot="updateSlot">
+        </signup-slot>
+      </template>
     </template>
   </div>
 </template>
@@ -21,18 +24,28 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import QuestModel from './QuestModel'
+import SignupSlot from './signups/SignupSlot.vue'
 
 @Component({
+  components: {
+    SignupSlot
+  },
   props: {
     model: QuestModel
   }
 })
 export default class Quest extends Vue {
   model: QuestModel
+
   showDescription: boolean = false
 
   toggleDescription() {
     this.showDescription = !this.showDescription;
+  }
+
+  updateSlot(email: string, index: number) {
+    this.model.party[index] = email;
+    //TODO: save quest with service
   }
 }
 </script>

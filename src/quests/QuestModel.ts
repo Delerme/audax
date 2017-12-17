@@ -5,7 +5,7 @@ export default class QuestModel {
   description: string
   difficulty: number
   rewards: string[]
-  party: string[]   // TODO: player objects?
+  readonly party: string[]
 
   constructor(title: string) {
     this.id = 1;
@@ -14,6 +14,6 @@ export default class QuestModel {
     this.description = 'desc';
     this.difficulty = 0;
     this.rewards = ['reward1', 'reward2'];
-    this.party = ['One', 'Two'];
+    this.party = ["","","","",""];
   }
 }
