@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <h1>Audax Society</h1>
-    <template v-for="quest in quests">
-      <quest v-bind:model="quest"></quest>
+    <template v-for="quest of quests">
+      <quest :model="quest"></quest>
     </template>
   </div>
 </template>

@@ -5,7 +5,7 @@ export default class QuestModel {
   description: string
   difficulty: number
   rewards: string[]
-  readonly party: string[]
+  party: string[]
 
   constructor(title: string) {
     this.id = 1;

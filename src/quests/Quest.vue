@@ -2,16 +2,16 @@
   <div class="quest">
     <h1>{{ model.title }}</h1>
     <h2>Lvl {{ model.difficulty }}</h2>
-    <button class="toggle-description" v-on:click.stop="toggleDescription"></button>
+    <button class="toggle-description" @click.stop="toggleDescription"></button>
     <template v-if="showDescription">
       <p>{{ model.description }}</p>
     </template>
     <template v-else>
       <h2>Rewards:</h2>
       <ul>
-        <li v-for="reward in model.rewards">{{ reward }}</li>
+        <li v-for="reward of model.rewards">{{ reward }}</li>
       </ul>
-      <template v-for="(email, index) in model.party">
+      <template v-for="(email, index) of model.party">
         <signup-slot :email="email" :index="index" @requestSlot="updateSlot">
         </signup-slot>
       </template>
