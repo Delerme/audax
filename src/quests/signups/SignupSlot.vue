@@ -1,5 +1,5 @@
 <template>
-  <input type = "text"
+  <input type="text" class="slot"
     v-model.trim="input"
     :placeholder="placeholder"
     :disabled="!isEnabled"
@@ -21,7 +21,7 @@ export default class SignupSlot extends Vue {
   isEnabled: boolean
 
   created() {
-    this.placeholder = "Enter your email";
+    this.placeholder = ">______________________________________";
     this.input = this.email;
     this.isEnabled = this.input === "";
   }
@@ -33,7 +33,7 @@ export default class SignupSlot extends Vue {
       this.isEnabled = false;
     } else {
       this.input = "";
-      this.placeholder = "Invalid Email!";
+      this.placeholder = "Signup with a Yext Email";
       this.$el.focus();
     }
   }
@@ -44,3 +44,13 @@ export default class SignupSlot extends Vue {
   }
 }
 </script>
+
+<style>
+input.slot {
+  margin: .1em;
+  width: 100%;
+  font-size: 1.25em;
+  background: none;
+  border: none;
+}
+</style>

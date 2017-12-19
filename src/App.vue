@@ -43,14 +43,8 @@ h1, h2 {
   font-weight: bold;
 }
 
-ul {
-  list-style-type: lao;
-  padding: 0;
-}
-
 li {
-  /*display: inline-block;*/
-  margin: 0 10px;
+  margin: .2em 10px;
 }
 
 a {

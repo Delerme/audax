@@ -7,14 +7,21 @@
       <p>{{ model.description }}</p>
     </template>
     <template v-else>
-      <h2>Rewards:</h2>
-      <ul>
-        <li v-for="reward of model.rewards">{{ reward }}</li>
-      </ul>
-      <template v-for="(email, index) of model.party">
-        <signup-slot :email="email" :index="index" @requestSlot="updateSlot">
-        </signup-slot>
-      </template>
+      <div class="rewards">
+        <h2>Rewards:</h2>
+        <hr/>
+        <ul>
+          <li v-for="reward of model.rewards">{{ reward }}</li>
+        </ul>
+      </div>
+      <div class="slots">
+        <h2>Adventuring Party</h2>
+        <hr/>
+        <template v-for="(email, index) of model.party">
+          <signup-slot :email="email" :index="index" @requestSlot="updateSlot">
+          </signup-slot>
+        </template>
+      </div>
     </template>
   </div>
 </template>
@@ -78,6 +85,11 @@ button.toggle-description {
   background: none;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 h1 {
   margin: 0em;
   min-width: 65%;
@@ -98,5 +110,4 @@ p {
   height: 80%;
   font-size: 1.4em;
 }
-
 </style>
