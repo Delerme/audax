@@ -1,5 +1,5 @@
 <template>
-  <input type="text" class="slot"
+  <input type="email" class="slot"
     v-model.trim="input"
     :placeholder="placeholder"
     :disabled="!isEnabled"
@@ -21,9 +21,9 @@ export default class SignupSlot extends Vue {
   isEnabled: boolean
 
   created() {
-    this.placeholder = ">______________________________________";
-    this.input = this.email;
-    this.isEnabled = this.input === "";
+    this.placeholder = '>______________________________________';
+    this.input = this.email === '' ? '' : this.email.replace('@yext.com','');
+    this.isEnabled = this.input === '';
   }
 
   handleSignup() {
@@ -32,15 +32,14 @@ export default class SignupSlot extends Vue {
       this.$emit('requestSlot', this.input, this.index);
       this.isEnabled = false;
     } else {
-      this.input = "";
-      this.placeholder = "Signup with a Yext Email";
+      this.input = '';
+      this.placeholder = 'Signup with a Yext Email';
       this.$el.focus();
     }
   }
 
   isValidYextEmail() {
-    // do some validation
-    return true;
+    return this.input.endsWith('@yext.com');
   }
 }
 </script>
