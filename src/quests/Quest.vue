@@ -31,6 +31,7 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import QuestModel from './QuestModel'
+import QuestService from './QuestService'
 import SignupSlot from './signups/SignupSlot.vue'
 
 @Component({
@@ -52,7 +53,7 @@ export default class Quest extends Vue {
 
   updateSlot(email: string, index: number) {
     this.model.party[index] = email;
-    //TODO: save quest with service
+    new QuestService().updateQuestParty(this.model.id, index, email);
   }
 }
 </script>

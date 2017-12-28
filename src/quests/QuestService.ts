@@ -29,4 +29,17 @@ export default class QuestService {
       return this.MOCK_QUESTS
     }
   }
+
+  /**
+   * Update a signup slot
+   */
+  async updateQuestParty(id: number, index: number, email:string) {
+    try {
+      let res: AxiosResponse = await Axios.put(
+        `/quests/${id}`,
+        { index: index, email: email });
+    } catch(err) {
+      console.log(err);
+    }
+  }
 }
