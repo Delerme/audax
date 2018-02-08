@@ -1,21 +1,19 @@
 <template>
   <div class="quest">
-    <h1>{{ model.title }}</h1>
-    <h2>Lvl {{ model.difficulty }}</h2>
+    <h1 class="quest-title">{{ model.title }}</h1>
+    <h2 class="quest-lvl">Lvl {{ model.difficulty }}</h2>
     <button class="toggle-description" @click.stop="toggleDescription"></button>
     <template v-if="showDescription">
-      <p>{{ model.description }}</p>
+      <p class="quest-desc">{{ model.description }}</p>
     </template>
     <template v-else>
       <div class="rewards">
-        <h2>Rewards:</h2>
-        <hr/>
         <ul>
           <li v-for="reward of model.rewards">{{ reward }}</li>
         </ul>
       </div>
       <div class="slots">
-        <h2>Adventuring Party</h2>
+        <h2 class="quest-party">Adventuring Party</h2>
         <hr/>
         <template v-for="(email, index) of model.party">
           <signup-slot :email="email" :index="index" @requestSlot="updateSlot">
@@ -63,9 +61,10 @@ export default class Quest extends Vue {
 div.quest {
   width: 20em;
   height: 30em;
-  background-color: #cecece;
+  background: #f1e9d2;
+  background-repeat: repeat-x, repeat;
   padding: 1em;
-  margin: 1em 5em 1em 0em;
+  margin: 1em 2em 1em 0em;
   float: left;
   display: flex;
   flex-wrap: wrap;
@@ -88,27 +87,30 @@ button.toggle-description {
 
 ul {
   list-style-type: none;
+  font-size: 2.0em;
   padding: 0;
 }
 
-h1 {
+h1.quest-title {
   margin: 0em;
-  min-width: 65%;
-  max-width: 70%;
-  font-style: italic;
+  font-size: 2.3em;
+  min-width: 70%;
+  max-width: 73%;
 }
 
-h2 {
+h2.quest-lvl, h2.quest-party {
   margin: 0em;
+  font-size: 2.0em;
 }
 
 h3 {
   margin: 0em;
+  font-size: 2.0em;
 }
 
-p {
+p.quest-desc {
   width: 100%;
   height: 80%;
-  font-size: 1.4em;
+  font-size: 2.0em;
 }
 </style>

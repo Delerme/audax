@@ -48,7 +48,8 @@ export default class SignupSlot extends Vue {
 input.slot {
   margin: .1em;
   width: 100%;
-  font-size: 1.25em;
+  font-family: 'Tangerine', cursive;
+  font-size: 1.8em;
   background: none;
   border: none;
 }

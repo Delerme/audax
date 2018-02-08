@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Audax Society</h1>
+    <!-- <h1 class="page-title">Audax Society</h1> -->
     <template v-for="quest of quests">
       <quest :model="quest"></quest>
     </template>
@@ -34,9 +34,16 @@ export default class App extends Vue {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Tangerine', cursive;
   color: #2c3e50;
   padding: 50px;
+}
+
+h1.page-title {
+  font-size: 5.0em;
+  margin: 0em;
+  padding: 0em;
+  color: #000000;
 }
 
 h1, h2 {
@@ -49,5 +56,11 @@ li {
 
 a {
   color: #42b983;
+}
+
+html {
+  background: #4a3200;
+  background-image: url("assets/bg1.png"), url("assets/bg2.png");
+  background-repeat: repeat-x, repeat;
 }
 </style>
