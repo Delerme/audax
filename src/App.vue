@@ -21,4 +21,10 @@ html {
   background-image: url("assets/bg1.png"), url("assets/bg2.png");
   background-repeat: repeat-x, repeat;
 }
+
+#app {
+  font-family: 'Tangerine', cursive;
+  color: #2c3e50;
+  padding: 50px;
+}
 </style>

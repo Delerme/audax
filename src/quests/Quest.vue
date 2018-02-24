@@ -62,9 +62,8 @@ div.quest {
   width: 20em;
   height: 30em;
   background: #f1e9d2;
-  background-repeat: repeat-x, repeat;
   padding: 1em;
-  margin: 1em 2em 1em 0em;
+  margin: 1em 1.5em 1em 0em;
   float: left;
   display: flex;
   flex-wrap: wrap;
@@ -85,7 +84,7 @@ button.toggle-description {
   background: none;
 }
 
-ul {
+div.rewards ul {
   list-style-type: none;
   font-size: 2.0em;
   padding: 0;

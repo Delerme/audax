@@ -34,12 +34,6 @@ export default class QuestBoard extends Vue {
 
 
 <style>
-#app {
-  font-family: 'Tangerine', cursive;
-  color: #2c3e50;
-  padding: 50px;
-}
-
 h1.page-title {
   font-size: 5.0em;
   margin: 0em;
